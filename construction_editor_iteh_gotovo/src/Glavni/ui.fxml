@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Glavni.UIcontroller">
+   <center>
+      <GridPane maxHeight="100.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Construction: " GridPane.halignment="RIGHT" />
+            <Label text="Zone: " GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <Label text="Date: " textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+            <Button fx:id="searchButton" maxHeight="25.0" maxWidth="60.0" mnemonicParsing="false" onAction="#OpenMenu" text="Open" textAlignment="CENTER" GridPane.halignment="CENTER">
+               <GridPane.margin>
+                  <Insets top="25.0" />
+               </GridPane.margin></Button>
+            <Button fx:id="replaceButton" maxHeight="25.0" maxWidth="60.0" mnemonicParsing="false" onAction="#promjeni" text="Replace" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets top="40.0" />
+               </GridPane.margin>
+            </Button>
+            <TextField fx:id="constructionTextField" onKeyPressed="#PritisnutEnter" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets right="50.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="zonaTextField" onKeyPressed="#PritisnutEnter" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="50.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="dateTextField" onKeyPressed="#PritisnutEnter" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets right="50.0" />
+               </GridPane.margin>
+            </TextField>
+            <Text fx:id="tekst" strokeType="OUTSIDE" strokeWidth="0.0" text="Click Open to load file." textAlignment="CENTER" translateX="165.0" translateY="250.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <font>
+                  <Font name="Arial Italic" size="36.0" />
+               </font>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow color="RED" />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Text>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </GridPane>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Info">
+            <items>
+              <MenuItem fx:id="about" mnemonicParsing="false" onAction="#aboutinfo" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <TableView fx:id="tableViewGlavni" maxHeight="420.0" maxWidth="640.0" prefHeight="425.0" prefWidth="630.0" translateY="-5.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="stringColumn" prefWidth="621.0" text="text" />
+        </columns>
+         <BorderPane.margin>
+            <Insets top="5.0" />
+         </BorderPane.margin>
+      </TableView>
+   </bottom>
+</BorderPane>
