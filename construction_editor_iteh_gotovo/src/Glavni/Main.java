@@ -35,12 +35,7 @@ public class Main extends Application{
 	    final Image APPLICATION_ICON = new Image("/icons/Folder-icon.png");
 	    Stage dialogStage = (Stage) alert.getDialogPane().getScene().getWindow();
 	    dialogStage.getIcons().add(APPLICATION_ICON);
-
-	    // Add custom ImageView to Dialog's header pane.        
-	    /* final ImageView DIALOG_HEADER_ICON = new ImageView("file:Folder-icon.png");
-	    DIALOG_HEADER_ICON.setFitHeight(48); // Set size to API recommendation.
-	    DIALOG_HEADER_ICON.setFitWidth(48);
-	    alert.getDialogPane().setGraphic(DIALOG_HEADER_ICON);   */                    
+                 
 	    }
 	
 	
